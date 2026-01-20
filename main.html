@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Os 10 Poderes da Gamificação | GAME-ON®</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Meta tags -->
+    <meta property="og:title" content="Os 10 Poderes da Gamificação | GAME-ON®">
+    <meta property="og:description" content="Descubra o que faz alunos terminarem, aplicarem e recomendarem.">
+    <meta property="og:type" content="website">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --azul-petroleo: #223C50;
+            --azul-profundo: #1C2E3A;
+            --offwhite: #FAF9F6;
+            --areia: #E6DFD6;
+            --areia-clara: #F5F2ED;
+            --cobre: #B87333;
+            --cobre-hover: #a06429;
+            --azul-claro: #5F7E95;
+            --verde-oliva: #5F7E4B;
+            --cinza: #7A7A7A;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--offwhite);
+            color: var(--azul-petroleo);
+            line-height: 1.6;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 80px;
+            align-items: center;
+        }
+
+        /* ========== MOCKUP ========== */
+        .mockup-section {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mockup-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .ebook-main {
+            width: 280px;
+            height: 380px;
+            background: linear-gradient(135deg, var(--azul-petroleo) 0%, var(--azul-profundo) 100%);
+            border-radius: 6px;
+            box-shadow: 
+                30px 30px 60px rgba(0,0,0,0.15),
+                0 0 0 1px rgba(255,255,255,0.05) inset;
+            position: relative;
+            transform: perspective(1000px) rotateY(-8deg) rotateX(2deg);
+            margin-left: 80px;
+            transition: transform 0.4s ease;
+        }
+
+        .ebook-main:hover {
+            transform: perspective(1000px) rotateY(-4deg) rotateX(1deg);
+        }
+
+        .ebook-main::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 12px;
+            background: linear-gradient(to right, rgba(0,0,0,0.3), transparent);
+            border-radius: 6px 0 0 6px;
+        }
+
+        .ebook-spine {
+            position: absolute;
+            left: 18px;
+            top: 30px;
+            bottom: 30px;
+            width: 2px;
+            background: var(--cobre);
+        }
+
+        .ebook-content {
+            padding: 40px 30px 40px 45px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .ebook-tag {
+            font-size: 9px;
+            color: var(--cobre);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .ebook-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--offwhite);
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .ebook-subtitle {
+            font-size: 11px;
+            color: rgba(250,249,246,0.7);
+            line-height: 1.5;
+        }
+
+        .ebook-footer {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ebook-divider {
+            width: 30px;
+            height: 1px;
+            background: var(--cobre);
+        }
+
+        .ebook-author {
+            font-size: 10px;
+            color: rgba(250,249,246,0.6);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Páginas atrás */
+        .pages-stack {
+            position: absolute;
+            left: 0;
+            top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .page-preview {
+            width: 180px;
+            height: 100px;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 15px;
+            transform-origin: left center;
+        }
+
+        .page-preview:nth-child(1) {
+            transform: rotate(-8deg) translateX(-20px);
+        }
+
+        .page-preview:nth-child(2) {
+            transform: rotate(-4deg) translateX(-10px);
+        }
+
+        .page-preview:nth-child(3) {
+            transform: rotate(0deg);
+        }
+
+        .page-label {
+            font-size: 8px;
+            color: var(--cobre);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 11px;
+            color: var(--azul-petroleo);
+            margin-bottom: 6px;
+        }
+
+        .page-lines {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .page-line {
+            height: 2px;
+            background: var(--areia);
+            border-radius: 1px;
+        }
+
+        .page-line:nth-child(1) { width: 100%; }
+        .page-line:nth-child(2) { width: 85%; }
+        .page-line:nth-child(3) { width: 70%; }
+
+        .floating-badge {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background: var(--cobre);
+            color: var(--offwhite);
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 16px;
+            border-radius: 3px;
+            box-shadow: 0 4px 15px rgba(184,115,51,0.3);
+        }
+
+        /* ========== CONTEÚDO ========== */
+        .content-section {
+            max-width: 480px;
+        }
+
+        .content-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--cobre);
+            margin-bottom: 20px;
+        }
+
+        .content-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 42px);
+            font-weight: 600;
+            color: var(--azul-petroleo);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .content-title span {
+            color: var(--cobre);
+        }
+
+        .content-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--cobre);
+            margin-bottom: 20px;
+        }
+
+        .content-subtitle {
+            font-size: 17px;
+            color: var(--cinza);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        /* ========== FORMULÁRIO ========== */
+        .form-container {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            border: 1px solid var(--areia);
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--azul-petroleo);
+            margin-bottom: 12px;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            background: var(--areia-clara);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .radio-option:hover {
+            border-color: var(--azul-claro);
+        }
+
+        .radio-option.selected {
+            border-color: var(--cobre);
+            background: rgba(184, 115, 51, 0.05);
+        }
+
+        .radio-option input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--cobre);
+            cursor: pointer;
+        }
+
+        .radio-option span {
+            font-size: 14px;
+            color: var(--azul-petroleo);
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 15px;
+            border: 2px solid var(--areia);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--cobre);
+            box-shadow: 0 0 0 4px rgba(184, 115, 51, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px 24px;
+            font-size: 15px;
+            font-weight: 600;
+            color: white;
+            background: var(--cobre);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--cobre-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(184, 115, 51, 0.3);
+        }
+
+        .submit-btn:disabled {
+            background: var(--cinza);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Rodapé do Form - Padronizado */
+        .form-footer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--areia);
+            flex-wrap: wrap;
+        }
+
+        .form-footer-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: var(--cinza);
+        }
+
+        .form-footer-item svg {
+            width: 14px;
+            height: 14px;
+            color: var(--azul-claro);
+        }
+
+        /* Mensagem de sucesso */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 32px;
+        }
+
+        .form-success.show {
+            display: block;
+        }
+
+        .form-success-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--verde-oliva);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .form-success-icon svg {
+            width: 28px;
+            height: 28px;
+            color: white;
+        }
+
+        .form-success h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--azul-petroleo);
+            margin-bottom: 8px;
+        }
+
+        .form-success p {
+            font-size: 14px;
+            color: var(--cinza);
+        }
+
+        /* ========== BENEFÍCIOS ========== */
+        .benefits-section {
+            padding: 100px 80px;
+            background: var(--areia-clara);
+        }
+
+        .benefits-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefits-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .benefits-tag {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--cobre);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .benefits-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 4vw, 36px);
+            color: var(--azul-petroleo);
+        }
+
+        .benefits-grid-10 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--areia);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--cobre);
+            box-shadow: 0 10px 30px rgba(34, 60, 80, 0.08);
+        }
+
+        .benefit-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--cobre);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .benefit-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: var(--azul-petroleo);
+            margin-bottom: 8px;
+        }
+
+        .benefit-desc {
+            font-size: 13px;
+            color: var(--cinza);
+            line-height: 1.5;
+        }
+
+        /* ========== SEÇÃO AUTOR ========== */
+        .author-section {
+            padding: 80px;
+            background: white;
+        }
+
+        .author-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .author-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--areia);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--cinza);
+            border: 3px solid var(--offwhite);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .author-content {
+            
+        }
+
+        .author-tag {
+            font-size: 11px;
+            color: var(--cobre);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .author-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--azul-petroleo);
+            margin-bottom: 15px;
+        }
+
+        .author-bio {
+            font-size: 15px;
+            color: var(--azul-claro);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .author-credentials {
+            display: flex;
+            gap: 30px;
+        }
+
+        .credential {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .credential-icon {
+            width: 20px;
+            height: 20px;
+            background: var(--cobre);
+            border-radius: 50%;
+        }
+
+        .credential span {
+            font-size: 12px;
+            color: var(--azul-petroleo);
+        }
+
+        /* ========== FOOTER CTA ========== */
+        .footer-cta {
+            padding: 80px;
+            background: var(--azul-petroleo);
+            text-align: center;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(24px, 3vw, 32px);
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .cta-subtitle {
+            font-size: 16px;
+            color: var(--areia);
+            margin-bottom: 32px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            font-size: 15px;
+            font-weight: 600;
+            color: white;
+            background: var(--cobre);
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: var(--cobre-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(184, 115, 51, 0.4);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--azul-profundo);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo span {
+            color: var(--cobre);
+        }
+
+        footer p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ========== RESPONSIVO ========== */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 40px;
+                gap: 40px;
+            }
+
+            .mockup-section {
+                order: -1;
+            }
+
+            .ebook-main {
+                margin-left: 60px;
+            }
+
+            .content-section {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .content-divider {
+                margin: 0 auto 20px;
+            }
+
+            .benefits-section,
+            .author-section,
+            .footer-cta {
+                padding: 60px 24px;
+            }
+
+            .author-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .form-footer {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .mockup-container {
+                transform: scale(0.85);
+            }
+
+            .pages-stack {
+                display: none;
+            }
+
+            .ebook-main {
+                margin-left: 0;
+            }
+
+            .benefits-grid-10 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        
+        <!-- MOCKUP -->
+        <div class="mockup-section">
+            <div class="mockup-container">
+                
+                <!-- Páginas atrás -->
+                <div class="pages-stack">
+                    <div class="page-preview">
+                        <span class="page-label">Poder 1</span>
+                        <p class="page-title">Valor Percebido</p>
+                        <div class="page-lines">
+                            <div class="page-line"></div>
+                            <div class="page-line"></div>
+                            <div class="page-line"></div>
+                        </div>
+                    </div>
+                    <div class="page-preview">
+                        <span class="page-label">Poder 3</span>
+                        <p class="page-title">Engajamento Contínuo</p>
+                        <div class="page-lines">
+                            <div class="page-line"></div>
+                            <div class="page-line"></div>
+                            <div class="page-line"></div>
+                        </div>
+                    </div>
+                    <div class="page-preview">
+                        <span class="page-label">Poder 7</span>
+                        <p class="page-title">Depoimentos Autênticos</p>
+                        <div class="page-lines">
+                            <div class="page-line"></div>
+                            <div class="page-line"></div>
+                            <div class="page-line"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ebook principal -->
+                <div class="ebook-main">
+                    <div class="ebook-spine"></div>
+                    <div class="ebook-content">
+                        <div>
+                            <span class="ebook-tag">Guia Gratuito</span>
+                            <h3 class="ebook-title">Os 10 Poderes da Gamificação</h3>
+                            <p class="ebook-subtitle">O sistema para criar cursos que escalam pela jornada do aluno.</p>
+                        </div>
+                        <div class="ebook-footer">
+                            <span class="ebook-divider"></span>
+                            <span class="ebook-author">Rafaela Vilela</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Badge -->
+                <span class="floating-badge">Grátis</span>
+
+            </div>
+        </div>
+
+        <!-- CONTEÚDO -->
+        <div class="content-section">
+            <span class="content-tag">Material Exclusivo</span>
+            <h1 class="content-title">Os <span>10 Poderes</span> da Gamificação</h1>
+            <div class="content-divider"></div>
+            <p class="content-subtitle">Descubra o que faz alunos terminarem, aplicarem e recomendarem — sem depender de mais tráfego.</p>
+
+            <!-- Formulário -->
+            <div class="form-container">
+                <form id="leadForm">
+                    
+                    <!-- Pergunta Você é: -->
+                    <label class="form-label">Você é:</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="perfil_atual" value="curso_ativo" required>
+                            <span>Já tenho mentoria/curso online ativo</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="perfil_atual" value="primeira_mentoria">
+                            <span>Criando minha primeira mentoria/curso</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="perfil_atual" value="planejando_lancar">
+                            <span>Planejando lançar algo em breve</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="perfil_atual" value="pesquisando_gamificacao">
+                            <span>Pesquisando sobre gamificação</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="perfil_atual" value="agencia_infoprodutor">
+                            <span>Trabalho com infoprodutores / agência</span>
+                        </label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" name="nome" class="input-field" placeholder="Seu nome" required>
+                        <input type="email" name="email" class="input-field" placeholder="Seu melhor e-mail" required>
+                    </div>
+
+                    <!-- Campos ocultos -->
+                    <input type="hidden" name="origem" value="10_poderes">
+                    <input type="hidden" name="utm_source" id="utm_source">
+                    <input type="hidden" name="utm_medium" id="utm_medium">
+                    <input type="hidden" name="utm_campaign" id="utm_campaign">
+                    <input type="hidden" name="utm_content" id="utm_content">
+
+                    <button type="submit" class="submit-btn" id="submitBtn">Quero o Guia Gratuito</button>
+                </form>
+
+                <!-- Rodapé do Form -->
+                <div class="form-footer">
+                    <div class="form-footer-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        <span>100% gratuito</span>
+                    </div>
+                    <div class="form-footer-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                        <span>Seus dados estão seguros</span>
+                    </div>
+                    <div class="form-footer-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                        <span>Sem spam</span>
+                    </div>
+                </div>
+
+                <!-- Mensagem de Sucesso -->
+                <div class="form-success" id="formSuccess">
+                    <div class="form-success-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </div>
+                    <h3>Pronto! Verifique seu email 📧</h3>
+                    <p>O guia está a caminho. Confira sua caixa de entrada.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- BENEFÍCIOS - OS 10 PODERES -->
+    <section class="benefits-section">
+        <div class="benefits-container">
+            <div class="benefits-header">
+                <span class="benefits-tag">O que você vai descobrir</span>
+                <h2 class="benefits-title">Os 10 Poderes da Gamificação</h2>
+            </div>
+
+            <div class="benefits-grid-10">
+                <div class="benefit-card">
+                    <span class="benefit-number">01</span>
+                    <h4 class="benefit-title">Valor Percebido</h4>
+                    <p class="benefit-desc">Aumenta percepção de qualidade e satisfação</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-number">02</span>
+                    <h4 class="benefit-title">Onboarding Mágico</h4>
+                    <p class="benefit-desc">Diminui reembolsos e cria conexão imediata</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-number">03</span>
+                    <h4 class="benefit-title">Engajamento Contínuo</h4>
+                    <p class="benefit-desc">Aumenta interação e reduz abandono</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-number">04</span>
+                    <h4 class="benefit-title">Ritmo Consciente</h4>
+                    <p class="benefit-desc">Mostra progresso e mantém o aluno no caminho</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-number">05</span>
+                    <h4 class="benefit-title">Aplicação Prática</h4>
+                    <p class="benefit-desc">Gera resultados visíveis e acelera progresso</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-number">06</span>
+                    <h4 class="benefit-title">Resultados Comprovados</h4>
+                    <p class="benefit-desc">Mostra que o conteúdo gerou mudança na vida do aluno</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-number">07</span>
+                    <h4 class="benefit-title">Depoimentos Autênticos</h4>
+                    <p class="benefit-desc">Prova social que vende por você</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-number">08</span>
+                    <h4 class="benefit-title">Recomendações Engajadas</h4>
+                    <p class="benefit-desc">Atrai novos alunos de forma orgânica</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-number">09</span>
+                    <h4 class="benefit-title">Fechamento Memorável</h4>
+                    <p class="benefit-desc">Aumenta a taxa de conclusão e recompra</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-number">10</span>
+                    <h4 class="benefit-title">Conversão & Ascensão Progressiva</h4>
+                    <p class="benefit-desc">Aumenta o LTV do aluno</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTOR -->
+    <section class="author-section">
+        <div class="author-container">
+            <div class="author-image"><img src="https://global-files-nginx.builderall.com/0d892035-0d58-4e43-84dc-deabaeba2a47/28ea2fa0aab45f1d674320d9b22f37aef042b17bc6833119bf2dab10468dddfa.png" alt="Rafaela Vilela" width="180" height="180"></div>
+            <div class="author-content">
+                <span class="author-tag">Sobre a autora</span>
+                <h3 class="author-name">Rafaela Vilela</h3>
+                <p class="author-bio">Especialista em gamificação da jornada do aluno. Criadora do Método GAME-ON®, que transforma cursos online em experiências que engajam, retêm e geram provas sociais de forma sistemática.</p>
+                <div class="author-credentials">
+                    <div class="credential">
+                        <div class="credential-icon"></div>
+                        <span>Método GAME-ON®</span>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER CTA -->
+    <section class="footer-cta">
+        <h2 class="cta-title">Pronto para transformar seu curso?</h2>
+        <p class="cta-subtitle">Baixe o guia gratuito e descubra os 10 poderes</p>
+        <a href="#" class="cta-btn" onclick="document.querySelector('.hero').scrollIntoView({behavior: 'smooth'}); return false;">Quero o Guia Agora</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">GAME-<span>ON</span>®</div>
+        <p>© 2025 Rafaela Vilela · Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        // ===== CONFIGURAÇÃO =====
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwLw4go-euqom0mEAEkuJ7emvT12Do1vGPLkgKFjI4sXKGXsAkytlie9GLB-Gf1maML/exec';
+        
+        // ===== CAPTURA UTMs =====
+        function getUTMs() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                utm_source: params.get('utm_source') || '',
+                utm_medium: params.get('utm_medium') || '',
+                utm_campaign: params.get('utm_campaign') || '',
+                utm_content: params.get('utm_content') || ''
+            };
+        }
+        
+        // Preenche campos ocultos com UTMs
+        document.addEventListener('DOMContentLoaded', function() {
+            const utms = getUTMs();
+            document.getElementById('utm_source').value = utms.utm_source;
+            document.getElementById('utm_medium').value = utms.utm_medium;
+            document.getElementById('utm_campaign').value = utms.utm_campaign;
+            document.getElementById('utm_content').value = utms.utm_content;
+        });
+        
+        // ===== RADIO BUTTONS =====
+        const radioOptions = document.querySelectorAll('.radio-option');
+        radioOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                radioOptions.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+        
+        // ===== SUBMIT DO FORMULÁRIO =====
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('submitBtn');
+            const form = this;
+            const formSuccess = document.getElementById('formSuccess');
+            
+            // Desabilita botão
+            btn.disabled = true;
+            btn.textContent = 'Enviando...';
+            
+            // Coleta dados
+            const formData = new FormData(form);
+            const data = {
+                tipo: 'lead',
+                nome: formData.get('nome'),
+                email: formData.get('email'),
+                perfil_atual: formData.get('perfil_atual'),
+                origem: formData.get('origem'),
+                utm_source: formData.get('utm_source'),
+                utm_medium: formData.get('utm_medium'),
+                utm_campaign: formData.get('utm_campaign'),
+                utm_content: formData.get('utm_content')
+            };
+            
+            try {
+                // Envia para Apps Script
+                const response = await fetch(APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                // Mostra sucesso
+                form.style.display = 'none';
+                document.querySelector('.form-footer').style.display = 'none';
+                formSuccess.classList.add('show');
+                
+            } catch (error) {
+                console.error('Erro:', error);
+                btn.disabled = false;
+                btn.textContent = 'Quero o Guia Gratuito';
+                alert('Ocorreu um erro. Por favor, tente novamente.');
+            }
+        });
+    </script>
+
+</body>
+</html>
