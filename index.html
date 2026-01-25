@@ -1094,7 +1094,29 @@
                 gtag('event', 'generate_lead', {
                     event_category: 'formulario',
                     event_label: 'ebook_10_poderes'
-                });                
+                });      
+
+                // Evento personalizado Brevo no frontend
+                Brevo.push([
+                  "track",
+                  "baixou_ebook", // Nome do evento
+                  {
+                    email: formData.get('email'),            // Email do contato
+                    FIRSTNAME: formData.get('nome')           // Nome (opcional)
+                  },
+                  {
+                    id: "ebook_10_poderes",                   // ID do evento para organização
+                    data: {
+                      ebook: "10_poderes",                    // Nome do ebook
+                      perfil: formData.get('perfil_atual') || '',
+                      origem: formData.get('origem') || '',
+                      utm_source: formData.get('utm_source') || '',
+                      utm_medium: formData.get('utm_medium') || '',
+                      utm_campaign: formData.get('utm_campaign') || '',
+                      utm_content: formData.get('utm_content') || ''
+                    }
+                  }
+                ]);
                 
             } catch (error) {
                 console.error('Erro:', error);
